@@ -42,7 +42,7 @@ class BinarySearchTree {
         let current = this.root, 
             found = false;
         while(!found && current){
-            if(value < current.value{
+            if(value < current.value){
                 current = current.left
             }else if(value > current.value){
                 current = current.right
@@ -54,7 +54,28 @@ class BinarySearchTree {
         }
     }
 
+    BFS(){
+        let data = [],
+            queue = 0;
+        
+        queue.push(this.root);
+        while(queue.length){
+            let node = queue.shift()
+            data.push(node);
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
+        }
+    
+        return data;
+        
+    
+    }
+
+
 }
+
+
+
 
 var tree = new BinarySearchTree();
 // tree.root = new Node(10)
